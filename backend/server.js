@@ -1,4 +1,3 @@
-
 // Importing required modules
 
 const express = require('express');
@@ -18,11 +17,15 @@ const PORT = 5000;
 // MongoDB connection
 
 mongoose.connect(
-  "mongodb+srv://priyapathak3069:Betu8074367783@cluster0.vqbao.mongodb.net/backend?retryWrites=true&w=majority&appName=Cluster0",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  "mongodb+srv://priyapathak3069:Betu8074367783@cluster0.vqbao.mongodb.net/backend?retryWrites=true&w=majority&appName=Cluster0"
 )
   .then(() => console.log('DB connected...'))
   .catch((err) => console.log(err));
+
+  // Root URL route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Zomato ');
+});
 
 // Register API
 app.post('/register', async (req, res) => {
@@ -56,4 +59,4 @@ app.post('/login', async (req, res) => {
 });
 
 // Connecting Server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); 
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

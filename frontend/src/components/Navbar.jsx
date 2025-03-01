@@ -10,7 +10,7 @@ const Navbar = ({ isLoggedIn }) => {
 
   return (
     <nav style={{ padding: "10px", backgroundColor: "#282c34", color: "white" }}>
-      <h2>MERN App</h2>
+      <h2>ZOMATO App</h2>
       <div>
         {!isLoggedIn ? (
           <>
